@@ -1,48 +1,51 @@
-class call {
-	synchronized void callMe(String tna)
+import java.util.*;
+
+class Cal
+{
+int n1,n2;
+Scanner scan=new Scanner(System.in);
+void input()
+{
+System.out.print("enter two numbers:");
+n1=scan.nextInt();
+n2=scan.nextInt();
+}
+
+int add()
 	{
-		System.out.print("\n [ "+tna);
-		try {
-			Thread.sleep(3000);
-			
-		}
-		catch(Exception e)
-		{
-			
-			
-		}
-		System.out.println(" ] ");
+	return n1+n2;
 	}
-}
-class Child implements Runnable{
-	Thread th;
-	String name;
-	call c;
-	
-	Child(String name,call c){
-		th=new Thread(this);
-		this.c=c;
-		this.name=name;
-		th.start();
-		
-		
+int sub()
+
+	{
+	return n1-n2;
 	}
-	public void run(){
-		c.callMe(name);
-		
+int multi()
+	{
+	return n1*n2;
 	}
+float div()
+	{
+	return (float)(n1/n2);
+	}
+
 }
 
+public class Calsi
+{
+public static void main(String[] st)
+{
+Cal a1=new Cal();
 
-public class SynFirst {
+a1.input();
+System.out.print("\nsub="+a1.sub());
 
-	public static void main(String[] args) {
-		call c=new call();
-		
-		Child c1=new Child("hetvi",c);
-		Child c2=new Child("kanav",c);
-		Child c3=new Child("manisha",c);// TODO Auto-generated method stub
+System.out.print("\nadd="+a1.add());
 
-	}
+System.out.print("\nmulti="+a1.multi());
+
+System.out.print("\ndivision="+a1.div());
+
+}
 
 }
