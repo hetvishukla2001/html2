@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 class Cal
 {
@@ -36,6 +36,7 @@ public class Calsi
 public static void main(String[] st)
 {
 Cal a1=new Cal();
+Scanner scan=new Scanner(System.in);
 
 a1.input();
 System.out.print("\nsub="+a1.sub());
@@ -45,6 +46,17 @@ System.out.print("\nadd="+a1.add());
 System.out.print("\nmulti="+a1.multi());
 
 System.out.print("\ndivision="+a1.div());
+System.out.print("enter mintes");
+int minutes =scan.nextInt();
+
+
+int year = minutes / 525600;
+int day = minutes / 1440;
+int remainingMinutes = day % 525600;
+
+
+System.out.println(minutes + " minutes is " + year + " years and "  +  remainingMinutes + " days ");
+
 
 }
 
