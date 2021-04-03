@@ -1,0 +1,100 @@
+import java.util.*;
+class Employee{
+int id ;
+String name;
+	Employee(int a,String b)
+	{
+		id=a;
+		name=b;
+	}
+	
+	void show()
+	{
+		System.out.println("EMPLOYEE ID :"+id);
+		System.out.println("EMPLOYEE NAME :"+name);
+	}
+
+}
+class Permenant extends Employee{
+	float salary;
+	Permenant(int a,String b)
+	{
+	super(a,b);
+	}
+	
+	void show()
+	{
+		super.show();
+		System.out.println("SALARY   :"+salary);
+	}
+
+}
+class Months extends Permenant{
+float hra,da,ts;
+Months(int a,String b,float c)
+	{
+	super(a,b);
+	hra=c * (0.1f);
+	da=c *(0.01f);
+	salary= hra + da +c;
+
+	}
+	void show()
+	{
+	super.show();
+	}
+
+}
+class Daily extends Permenant{
+	int hours;
+	int pay;
+	Daily(int a,String b,int c,int d)
+	{
+		super(a,b);
+		salary= c *d;
+	}
+	void show()
+	{
+	super.show();
+	System.out.println("HOURS AND PAY :"+hours+pay);
+	}
+	
+}
+
+class Commission extends Employee
+	{
+	int sales,per,tp;
+	Commission(int a,String b,int c,int d)
+	{
+	super(a,b);
+	sales=c;
+	per=d;
+	tp=(sales*per)/100;
+	}
+	void show()
+	{
+	super.show();
+	System.out.println("\n SALES :"+sales);
+	System.out.println("PER :"+per);
+	System.out.println("TOTAL PAY:"+tp);
+	}
+
+}
+public class MyEmployee
+{
+public static void main(String[] st)
+{
+	Commission b1=new Commission(1,"hetvi",100000,30);
+	Months b2=new Months(1,"hetvi",100000);
+	Daily b3=new Daily(1,"hetvi",10,10000);
+	b1.show();
+	b2.show();
+	b3.show();
+
+}
+
+}
+ 
+
+
+
